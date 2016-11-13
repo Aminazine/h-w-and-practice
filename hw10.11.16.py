@@ -34,3 +34,39 @@ def sum_num_of_pow(n):
     return sum
 result = sum_num_of_pow(n)
 print("The sum of the numbers which are powers of %d is: %d" % (n, result))
+
+# 23. Написать функцию для поиска среднее арифметическое всех элементов списка.
+
+list = [11, 7, 13, 4]
+print("The average value of", (list))
+
+def aver_all_elem(list):
+    aver_el = list[0]
+    for i in range(len(list)):
+        ce = list[i]
+        if ce < aver_el:
+            aver_el=aver_el+ce
+    return aver_el / len(list)
+
+res = aver_all_elem(list)
+print("is", res)
+
+# 24. Написать функцию для поиска разницы сумм всех четных и всех нечетных чисел списка. Т.е. От суммы четных чисел вычесть сумму нечетных чисел в списке.
+
+lst = [12, 6, 9, 18, 7, 11, 4]
+
+def dif_sum_ev_od(lst):
+    even = 0
+    odd = 0
+    for i in range (len(lst)):
+        ce = lst[i]
+        if ce % 2 == 0:
+            even = even + ce
+        else:
+            odd = odd + ce
+        ce = ce // 10
+    diff = even - odd
+    return diff
+
+res = dif_sum_ev_od(lst)
+print("The difference sums of even and odd is: ", res)
