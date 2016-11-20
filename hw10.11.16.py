@@ -135,3 +135,39 @@ def most_freq_elem(list):
 
 result = most_freq_elem(lst)
 print("The number '%d' is the most common" % (result))
+
+# 28. Создать программу, которая запрашивает у пользователя произвольную строку символов.
+
+
+# 29. Создать генератор паролей, который будет генерировать случайные неповторяющиеся пароли по следующим правилам:
+# - Пароль состоит из 8 символов
+# - В пароле допускаются только латинские большие и маленькие буквы, цифры и символ подчеркивания
+# - Пароль обязательно должен содержать Большие и маленькие буквы и цифры
+
+simb_upp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+simb_low = "_abcdefghijklmnopqrstuvwxyz"
+dig_ch = "1234567890"
+
+def rand(simb):
+    for i in range(len(simb)):
+        rand_simb = random.randrange(0,len(simb))
+        return rand_simb
+
+passw = ""
+length = 8
+for i in range(length):
+    ind = random.randrange(len(simb_upp))
+    passw = passw + simb_upp[ind]
+
+for i in range(random.randrange(1,3)):
+    rand_ind = random.randrange(len(passw) // 2)
+    passw = passw[0:rand_ind] + str(rand(dig_ch)) + passw[rand_ind + 1:]
+
+for i in range(random.randrange(1,3)):
+    rand_ind = random.randrange(len(passw) // 2, len(passw))
+    passw = passw[0:rand_ind] + simb_low[rand_ind] + passw[rand_ind + 1:]
+
+print(passw)
+print(len(passw))
+
+
