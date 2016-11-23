@@ -138,6 +138,17 @@ print("The number '%d' is the most common" % (result))
 
 # 28. Создать программу, которая запрашивает у пользователя произвольную строку символов.
 
+text = "год-2016"
+
+def conv(text):
+    encr = "абвгдо123456-0"
+    conv_txt = ''
+    for i in range(len(text)):
+        if text[i] in encr:
+            conv_txt = conv_txt + encr[(encr.index(text[i]) + 5) % len(encr)]
+    return conv_txt
+res = conv(text)
+print(res)
 
 # 29. Создать генератор паролей, который будет генерировать случайные неповторяющиеся пароли по следующим правилам:
 # - Пароль состоит из 8 символов
