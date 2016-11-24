@@ -126,3 +126,28 @@ for elem_list in lst:
 #11. В двумерном массиве отсортировать четные столбцы по возрастанию, а
 #    нечетные - по убыванию
 
+arr = [[-9, 14, 5, 6], [7, 19, -3, 11], [14, 5, 2, 7], [5, 10, 19, 0]]
+
+for i in range(len(arr)):
+   for j in range(len(arr)):
+           num_arr = arr[i][j]
+           arr_idx = i
+           for n in range(i, len(arr)):
+               if j%2 !=0 and num_arr > arr[n][j]:
+                   num_arr = arr[n][j]
+                   arr_idx = n
+               elif j%2 == 0 and num_arr < arr[n][j]:
+                   num_arr = arr[n][j]
+                   arr_idx = n
+           arr[arr_idx][j] = arr[i][j]
+           arr[i][j] = num_arr
+
+print("odd","\t","even","\t","odd","\t","even")
+
+for elem_list in arr:
+    for elem in elem_list:
+        print(elem, end="\t\t ")
+    print("")
+
+
+# 12. Напишите программу, которая будет выводить на экран 15 случайных примеров из таблицы умножения.
