@@ -30,16 +30,16 @@ def multip_of_n(n):
 print (multip_of_n(n))
 
 # 5. Создать программу, выводящую на экран ближайшее к 10 из двух чисел.
-
-x = 10
-a = 8.5
-b = 11.45
-if (x - a) > (x - b):
-    print("b")
-if (x - a) < (x - b):
-    print("a")
-if (x - a) == (x - b):
-    print("a,b")
+a,b = 20,0
+def check(a, b):
+    x = 10
+    if abs(x - a) > abs(x - b):
+        return("The closest number to '10' of %.1f and %.1f is: %.1f" % (a,b,b))
+    if abs(x - a) < abs(x - b):
+        return("The closest number to '10' of %.1f and %.1f is: %.1f" % (a,b,a))
+    if abs(x - a) == abs(x - b):
+        return("The numbers are equidistant")
+print(check(a,b))
 
 # 6. Создать массив из 10 элементов и проинициализировать его простыми числами в случайном порядке
 
@@ -151,3 +151,21 @@ for elem_list in arr:
 
 
 # 12. Напишите программу, которая будет выводить на экран 15 случайных примеров из таблицы умножения.
+
+stud_quant = 15
+
+def multipl_table_test(st_qnt):
+   mult_tab = []
+   for i in range(2, 10):
+     for j in range(2, 10):
+       n = "%s*%s" % (i,j)
+       if i*j in mult_tab:
+           continue
+       mult_tab.append(n)
+   random.shuffle(mult_tab)
+   return mult_tab[:st_qnt+1]
+
+multp_tab = multipl_table_test(stud_quant)
+
+for i in range(1,len(multp_tab)):
+   print("%2s:""%4s" % (i, multp_tab[i]),"=")
