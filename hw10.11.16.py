@@ -72,8 +72,8 @@ print("The difference sums of even and odd is: ", res)
 
 list = [i for i in range (1,100, 2)]
 print(list)
-random.shuffle(list)
-print(list)
+shuf_list = sorted(list, key=lambda x: random.random())
+print(shuf_list)
 
 # 26. Создайте 2 списка из 5 случайных целых чисел из отрезка [0;5] каждый, выведите списки на
 # экран в двух отдельных строках. Посчитайте среднее арифметическое элементов каждого
