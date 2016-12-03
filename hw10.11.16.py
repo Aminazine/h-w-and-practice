@@ -107,10 +107,7 @@ if res2 > res1:
 if res1 == res2:
     print('Average values of two lists are equal')
 
-# 27. Создайте список из 11 случайных целых чисел из отрезка [-1;1], выведите список на экран в
-# строку. Определите какой элемент встречается в списке чаще всего и выведите об этом
-# сообщение на экран. Если два каких-то элемента встречаются одинаковое количество раз,
-# то не выводить ничего.
+# 27.
 
 def fill_list(list):
     lst = [random.randint(-1, 1) for i in range(11)]
@@ -122,6 +119,7 @@ print(lst)
 def most_freq_elem(list):
     elem = lst[0]
     max_freq = 1
+    repeat = False
     for i in range(len(lst) - 1):
         freq = 1
         for n in range(i + 1, len(lst)):
@@ -129,12 +127,14 @@ def most_freq_elem(list):
                 freq += 1
         if freq > max_freq:
             max_freq = freq
-            elem = lst[i]
-    if max_freq > 1:
-        return elem
-
+            elem = list[i]
+            repeat = True
+        elif freq == max_freq:
+            repeat = False
+    if repeat == False:
+        return
+    return print("The '%s' is the most common. %s times." % (elem, max_freq))
 result = most_freq_elem(lst)
-print("The number '%d' is the most common" % (result))
 
 # 28. Создать программу, которая запрашивает у пользователя произвольную строку символов.
 
