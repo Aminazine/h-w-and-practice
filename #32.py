@@ -7,7 +7,7 @@ class Godzilla:
 
     def __init__(self):
         self.swallowed = 0
-        self.stomach_volume = 100
+        self.stomach_volume = 150
 
     def om_nom_nom(self, number_of_persons):
         self.number_of_persons = number_of_persons
